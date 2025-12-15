@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הרשמה</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body id="signup-page">
+    <div class="container">
+        <img src="logo.png" id="logo" class=logo alt="לוגו של האתר המטורף שלנו">
+        <h1>הרשמה</h1>
+        <form action="login.html" method="post" id="signup">
+            <label for="fullname"> שם מלא:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="ישראל ישראלי" required>
+            <label for="email">אימייל:</label>
+            <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+            <label for="username">מספר אישי:</label>
+            <input type="text" id="username" name="username" placeholder="1234567" required>
+            <label for="role">תפקיד:</label>
+            <select id="role" name="role" required>
+                <option value="" disabled selected>בחר אפשרות...</option>
+                <option value="chanich">חניך</option>
+                <option value="commander">מפקד</option>
+            </select>
+            <label for="commname">לחניכים בלבד - שם מפקד:</label>
+            <select name="commname" id="commname"> <!-- לעשות בJS את השדה חובה למי שבחר חניך -->
+                <option value="" disabled selected>בחר אפשרות...</option>
+                <option value="opt1">ירין ריזר</option>
+                <option value="opt2">יואב כותב</option>
+                <option value="opt3">אביר נזר</option>
+                <option value="opt4"> אופיר באו</option>
+                <option value="opt5">עילם ברק</option>
+                <option value="opt6">נועה מסמרי</option>
+            </select>
+            <label for="password">סיסמא:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="password confirmation">אימות סיסמא:</label>
+            <input type="password" id="password-confirmation" name="password confirmation"
+                required><!-- לעשות בדיקה בJS שהסיסמאות שוות -->
+            <button type="submit" form="signup">הרשמה</button>
+        </form>
+    </div>
+    <script src="signup.js"></script>
+</body>
+</html>
