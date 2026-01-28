@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קצינויות</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body id="jobs-page">
+    <header>
+        <div class="profile-container header-section right-side">
+            <div class="profile-button header-section">
+                <button class="simple-button " id="profile-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg>
+                </button>
+            </div>
+            <div id="profileDropdown" class="profile-dropdown hidden">
+                <span id="username-display" class="dropdown-content">username</span>
+                <button id="logoutButton" class="simple-button dropdown-content">התנתק</button>
+            </div>
+        </div>
+        <div class="header-section center-side">
+            <img src="../images/logo.png" id="logo" class="logo" alt="לוגו של האתר המטורף שלנו">
+        </div>
+        <div class="header-section left-side">
+            <button type="button" class="button" onclick="goToMefekedPage()">מעבר לדף מפקד</button>
+        </div>
+    </header>
+    <div class="container">
+        <h1>קצינויות</h1>
+        <h2>עריכת קצינויות</h2>
+        <div class="card-table">
+            <table id="jobs-table">
+                <thead>
+                    <tr class="table-headers">
+                        <th>שם</th>
+                        <th>תיאור</th>
+                        <th>אחריות אישית</th>
+                        <th>סדר וארגון</th>
+                        <th>יוזמה</th>
+                        <th>יצרתיות</th>
+                        <th>עבודה מול אנשים</th>
+                        <th>עבודה מול גורמים פיקודיים</th>
+                        <th>זמן השקעה שבועי</th>
+                        <th>עמידה מול קהל</th>
+                        <th>עבודת צוות</th>
+                        <th>אסרטיביות</th>
+                        <th>מנהיגות</th>
+                        <th>תכנון קדימה</th>
+                        <th>ערוך קצינות</th>
+                        <th>הסר קצינות</th>
+                    </tr>
+                </thead>
+                <tbody id="jobsTBody">
+                </tbody>
+            </table>
+        </div>
+        <div class="add-job-form">
+            <form id="jobs-form">
+                <h2>הוסף קצינות</h2>
+                <label for="job-title">שם הקצינות:</label>
+                <input type="text" id="job-title" name="job-title" required>
+                <label for="job-description">תיאור הקצינות:</label>
+                <textarea id="job-description" name="job-description" required></textarea>
+                <label>אחריות אישית</label>
+                <input type="number" name="req_responsibility" min="1" max="10" required>
+
+                <label>סדר וארגון</label>
+                <input type="number" name="req_organization" min="1" max="10" required>
+
+                <label>יוזמה</label>
+                <input type="number" name="req_initiative" min="1" max="10" required>
+
+                <label>יצירתיות</label>
+                <input type="number" name="req_creativity" min="1" max="10" required>
+
+                <label>עבודה מול אנשים</label>
+                <input type="number" name="req_socialSkill" min="1" max="10" required>
+
+                <label>עבודה מול גורמים פיקודיים</label>
+                <input type="number" name="req_commWork" min="1" max="10" required>
+
+                <label>זמן השקעה שבועי</label>
+                <input type="number" name="req_weeklyTime" min="1" max="10" required>
+
+                <label>עמידה מול קהל</label>
+                <input type="number" name="req_publicSpeaking" min="1" max="10" required>
+
+                <label>עבודת צוות</label>
+                <input type="number" name="req_teamWork" min="1" max="10" required>
+
+                <label>אסרטיביות</label>
+                <input type="number" name="req_assertiveness" min="1" max="10" required>
+
+                <label>מנהיגות</label>
+                <input type="number" name="req_leadership" min="1" max="10" required>
+
+                <label>תכנון קדימה</label>
+                <input type="number" name="req_forwardThinking" min="1" max="10" required>
+                <button type="submit">שמור קצינויות</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/jobs.js"></script>
+    <script src="../js/header.js"></script>
+
+</body>
+
+</html>

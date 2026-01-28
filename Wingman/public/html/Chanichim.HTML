@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חניכים</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body id="chanich-page">
+    <header>
+        <div class="profile-container header-section right-side">
+            <div class="profile-button header-section">
+                <button class="simple-button " id="profile-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg>
+                </button>
+            </div>
+            <div id="profileDropdown" class="profile-dropdown hidden">
+                <span id="username-display" class="dropdown-content">username</span>
+                <button id="logoutButton" class="simple-button dropdown-content">התנתק</button>
+            </div>
+        </div>
+        <div class="header-section center-side">
+            <img src="../images/logo.png" id="logo" class="logo" alt="לוגו של האתר המטורף שלנו">
+        </div>
+        <div class="spacer header-section left-side"></div>
+
+    </header>
+    <div class="container">
+        <h1>חניכים</h1>
+        <h2>שאלון לחניך</h2>
+        <form action="/submit-profile" method="POST" id="Info">
+            <div class="form-section">
+                <h3>מגמות:</h3>
+                <label for="megamalimud">לימוד:</label>
+                <select name="megamalimud" id="megamalimud" required>
+                    <option value="" disabled selected>בחר אפשרות...</option>
+                    <option value="politics">פוליטיקה</option>
+                    <option value="sys_men">ניהול מערכות מידע</option>
+                    <option value="comp_sc">מדמ"ח</option>
+                </select>
+                <label for="megamatisa">טיסה:</label>
+                <select name="megamatisa" id="megamatisa" required>
+                    <option value="" disabled selected>בחר אפשרות...</option>
+                    <option value="krav">קרב</option>
+                    <option value="nav_krav">נווטי קרב</option>
+                    <option value="tovala">תובלה</option>
+                    <option value="nav_tovala">נווטי תובלה</option>
+                    <option value="mechonenim">מכוננים</option>
+                    <option value="mesokim">מסוקים</option>
+                </select>
+            </div>
+
+            <div class="form-section" id="previousjobs">
+                <h3>קצינויות קודמות:</h3>
+                <div class="checkbox-group">
+                    <label for="prvjob1">תחקור</label>
+                    <input type="checkbox" id="prvjob1" name="job1" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="prvjob2">ניווט</label>
+                    <input type="checkbox" id="prvjob2" name="job2" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="prvjob3">בטיחות</label>
+                    <input type="checkbox" id="prvjob3" name="job3" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="prvjob4">חיבור לחיל האוויר</label>
+                    <input type="checkbox" id="prvjob4" name="job4" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="prvjob5">ספורט</label>
+                    <input type="checkbox" id="prvjob5" name="job5" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="prvjob6">רכב</label>
+                    <input type="checkbox" id="prvjob6" name="job6" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="prvjob7">חינוך</label>
+                    <input type="checkbox" id="prvjob7" name="job7" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="prvjob8">לוגיסטיקה</label>
+                    <input type="checkbox" id="prvjob8" name="job8" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="prvjob9">תרבות</label>
+                    <input type="checkbox" id="prvjob9" name="job9" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="prvjob10">לו"ז</label>
+                    <input type="checkbox" id="prvjob10" name="job10" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="prvjob11">מחשוב</label>
+                    <input type="checkbox" id="prvjob11" name="job11" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="prvjob12">הווי</label>
+                    <input type="checkbox" id="prvjob12" name="job12" value="yes">
+                </div>
+            </div>
+
+            <div class="form-section" id="qualities-section">
+                <h3>דרג את התכונות הבאות שלך:</h3>
+                <div class="rate-group">
+                    <label for="quailty1">אחריות אישית</label>
+                    <input type="number" id="quailty1" name="score_responsibility" min="1" max="10" required>
+                </div>
+                <div class="rate-group">
+                    <label for="quailty2">סדר וארגון</label>
+                    <input type="number" id="quailty2" name="score_organization" min="1" max="10" required>
+                </div>
+                <div class="rate-group">
+                    <label for="quailty3">יוזמה</label>
+                    <input type="number" id="quailty3" name="score_initiative" min="1" max="10" required>
+                </div>
+                <div class="rate-group">
+                    <label for="quailty4">יצירתיות</label>
+                    <input type="number" id="quailty4" name="score_creativity" min="1" max="10" required>
+                </div>
+                <div class="rate-group">
+                    <label for="quailty5">עבודה מול אנשים</label>
+                    <input type="number" id="quailty5" name="score_socialSkill" min="1" max="10" required>
+                </div>
+                <div class="rate-group">
+                    <label for="quailty6">עבודה מול גורמים פיקודיים</label>
+                    <input type="number" id="quailty6" name="score_commWork" min="1" max="10" required>
+                </div>
+                <div class="rate-group">
+                    <label for="quailty7">זמן השקעה שבועי</label>
+                    <input type="number" id="quailty7" name="score_weeklyTime" min="1" max="10" required>
+                </div>
+                <div class="rate-group">
+                    <label for="quailty8">עמידה מול קהל</label>
+                    <input type="number" id="quailty8" name="score_publicSpeaking" min="1" max="10" required>
+                </div>
+                <div class="rate-group">
+                    <label for="quailty9">עבודת צוות</label>
+                    <input type="number" id="quailty9" name="score_teamWork" min="1" max="10" required>
+                </div>
+                <div class="rate-group">
+                    <label for="quailty10">אסרטיביות</label>
+                    <input type="number" id="quailty10" name="score_assertiveness" min="1" max="10" required>
+                </div>
+                <div class="rate-group">
+                    <label for="quailty11">מנהיגות</label>
+                    <input type="number" id="quailty11" name="score_leadership" min="1" max="10" required>
+                </div>
+                <div class="rate-group">
+                    <label for="quailty12">תכנון קדימה</label>
+                    <input type="number" id="quailty12" name="score_forwardThinking" min="1" max="10" required>
+                </div>
+                <div id="error-qualities" class="error-message"></div>
+            </div>
+
+            <h3>בחר 3 תכונות לשיפור:</h3>
+            <div class="form-section" id="improvequalities">
+                <div class="checkbox-group">
+                    <label for="improve1">אחריות אישית</label>
+                    <input type="checkbox" id="improve1" name="improve1" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="improve2">סדר וארגון</label>
+                    <input type="checkbox" id="improve2" name="improve2" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="improve3">יוזמה</label>
+                    <input type="checkbox" id="improve3" name="improve3" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="improve4">יצירתיות</label>
+                    <input type="checkbox" id="improve4" name="improve4" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="improve5">עבודה מול אנשים</label>
+                    <input type="checkbox" id="improve5" name="improve5" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="improve6">עבודה מול גורמים פיקודיים</label>
+                    <input type="checkbox" id="improve6" name="improve6" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="improve7">עמידה מול קהל</label>
+                    <input type="checkbox" id="improve7" name="improve7" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="improve8">עבודת צוות</label>
+                    <input type="checkbox" id="improve8" name="improve8" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="improve9">אסרטיביות</label>
+                    <input type="checkbox" id="improve9" name="improve9" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="improve10">מנהיגות</label>
+                    <input type="checkbox" id="improve10" name="improve10" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="improve11">תכנון קדימה</label>
+                    <input type="checkbox" id="improve11" name="improve11" value="yes">
+                </div>
+                <div id="error-improve" class="error-message"></div>
+            </div>
+
+            <div class="form-section" id="preferred-jobs">
+                <h3>בחר 3 קצינויות שאתה מעוניין לבצע:</h3>
+                <div id="jobs-container"></div>
+                <div id="error-jobs" class="error-message"></div>
+            </div>
+
+            <div class="form-section" id="skills">
+                <h3>כישורים שיש לך:</h3>
+                <div class="checkbox-group">
+                    <label for="skill1">עבודה עם אווטלוק</label>
+                    <input type="checkbox" id="skill1" name="skill1" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="skill2">הכנת מצגות</label>
+                    <input type="checkbox" id="skill2" name="skill2" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="skill3">ניסוח תחקיר</label>
+                    <input type="checkbox" id="skill3" name="skill3" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="skill4">הכנת תכנית עבודה</label>
+                    <input type="checkbox" id="skill4" name="skill4" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="skill5">קשר עם גורמי חוץ</label>
+                    <input type="checkbox" id="skill5" name="skill5" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="skill6">אחר</label>
+                    <input type="checkbox" id="skill6" name="skill6" value="yes">
+                </div>
+                <div class="checkbox-group">
+                    <label for="otherskill">אם בחרת אחר:</label>
+                    <input type="text" id="otherskill" name="otherskill" placeholder="פרט כאן" disabled>
+                </div>
+                <div id="error-skills" class="error-message"></div>
+            </div>
+
+            <h4>שים/י לב! ניתן למלא את הטופס פעם אחת בלבד! לאחר לחיצה על
+                "שלח" אין אפשרות לערוך את הטופס!</h4>
+            <button type="submit" form="Info">שלח</button>
+        </form>
+    </div>
+    <script src="../js/Chanichim.js"></script>
+    <script src="../js/header.js"></script>
+
+</body>
+
+</html>

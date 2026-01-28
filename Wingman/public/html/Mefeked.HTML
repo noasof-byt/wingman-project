@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מפקד</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body id="mefaked-page">
+    <header>
+        <div class="profile-container header-section right-side">
+            <div class="profile-button header-section">
+                <button class="simple-button " id="profile-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg>
+                </button>
+            </div>
+            <div id="profileDropdown" class="profile-dropdown hidden">
+                <span id="username-display" class="dropdown-content">username</span>
+                <button id="logoutButton" class="simple-button dropdown-content">התנתק</button>
+            </div>
+        </div>
+        <div class="header-section center-side">
+            <img src="../images/logo.png" id="logo" class="logo" alt="לוגו של האתר המטורף שלנו">
+        </div>
+        <div class="header-section left-side">
+            <button type="button" class="button" onclick="goToJobsPage()">מעבר לדף קצינויות</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 id="greeting"></h1>
+        <h2>סיכום המלצות חניכים</h2>
+        <div class="filters-container">
+            <select id="filter-tisa" class="style-select" onchange="filterTable()">
+                <option value="all" selected>כל מגמות הטיסה</option>
+                <option value="קרב">קרב</option>
+                <option value="נווטי קרב">נווטי קרב</option>
+                <option value="תובלה">תובלה</option>
+                <option value="מסוקים">מסוקים</option>
+                <option value='נווטי תובלה'>נווטי תובלה</option>
+                <option value='מכוננים'>מכוננים</option>
+            </select>
+            <select id="filter-limud" class="style-select" onchange="filterTable()">
+                <option value="all" selected>כל מגמות הלימוד</option>
+                <option value='מדמ"ח'>מדמ"ח</option>
+                <option value="כלכלה">כלכלה</option>
+                <option value="פוליטיקה">פוליטיקה</option>
+                <option value="ניהול מערכות מידע">ניהול מערכות מידע</option>
+            </select>
+        </div>
+        <div class="card-table">
+            <table id="chanich-table">
+                <thead>
+                    <tr>
+                        <th>שם החניך</th>
+                        <th>מגמת טיסה</th>
+                        <th>מגמת לימוד</th>
+                        <th>קצינות קודמת</th>
+                        <th>תפקיד מומלץ #1</th>
+                        <th>תפקיד מומלץ #2</th>
+                        <th>תפקיד מאתגר #1</th>
+                        <th>תפקיד מאתגר #2</th>
+                        <th>העדפה #1</th>
+                        <th>העדפה #2</th>
+                        <th>העדפה #3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../js/header.js"></script>
+    <script src="../js/Mefaked.js"></script>
+</body>
+
+</html>

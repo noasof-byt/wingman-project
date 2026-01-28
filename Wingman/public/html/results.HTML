@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סיכום תשובות השאלון לחניך</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body id="results-page">
+    <header>
+        <div class="profile-container header-section right-side">
+            <div class="profile-button header-section">
+                <button class="simple-button" id="profile-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg>
+                </button>
+            </div>
+            <div id="profileDropdown" class="profile-dropdown hidden">
+                <span id="username-display" class="dropdown-content">username</span>
+                <button id="logoutButton" class="simple-button dropdown-content"
+                    onclick="location.href='/logout'">התנתק</button>
+            </div>
+        </div>
+        <div class="header-section center-side">
+            <img src="../images/logo.png" id="logo" class="logo" alt="לוגו">
+        </div>
+        <div class="header-section left-side">
+            <button id="backToCommander" type="button" class="button hidden"
+                onclick="window.location.href='/html/Mefeked.HTML'">חזרה למפקד</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>סיכום נתונים לחניכ/ה {FULL_NAME}</h1>
+
+        <div class="card-table">
+            <h3>מגמות</h3>
+            <p><b>מגמת לימוד:</b> {MEGAMA_LIMUD}</p>
+            <p><b>מגמת טיסה:</b> {MEGAMA_TISA}</p>
+
+            <h3>קצינויות קודמות</h3>
+            <p>{PREV_JOBS}</p>
+
+            <h3>דירוג תכונות אישיות (1-10)</h3>
+            <table id="scores-table">
+                <thead>
+                    <tr>
+                        <th>תכונה</th>
+                        <th>דירוג</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {QUALITIES_ROWS}
+                </tbody>
+            </table>
+
+            <h3>תכונות לשיפור</h3>
+            <p>{IMPROVE_QUALITIES}</p>
+
+            <h3>העדפות לקצינויות (רצונות)</h3>
+            <p>{PREFERRED_JOBS}</p>
+
+            <h3>כישורים נוספים</h3>
+            <p>{SKILLS}</p>
+        </div>
+    </div>
+
+    <script>
+        function loadUserName() {
+            fetch('/api/me')
+                .then(response => {
+                    if (response.status === 401) window.location.href = '../html/login.HTML';
+                    return response.json();
+                })
+                .then(data => {
+                    const display = document.getElementById('username-display');
+                    if (display && data.name) display.innerText = data.name;
+                    if (data.role === 'commander') {
+                        const backBtn = document.getElementById('backToCommander');
+                        if (backBtn) backBtn.classList.remove('hidden');
+                    }
+                })
+
+                .catch(err => console.log("Error loading user name:", err));
+        }
+        loadUserName();
+    </script>
+    <script src="../js/header.js"></script>
+
+</body>
+
+</html>
